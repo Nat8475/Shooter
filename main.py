@@ -13,8 +13,7 @@ while True:
         #* Close Game
         if event.type == pg.QUIT:
             pg.quit()
-            quit()
-
+            quit() ;;;;;aaaaaa
 
 
 
