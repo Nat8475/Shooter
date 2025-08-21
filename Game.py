@@ -1,27 +1,16 @@
 import pygame as pg
 from Menu import Menu
+from Const import WIN_HEIGHT, WIN_WIDTH
 
 class Game:
     def __init__(self):
         pg.init()
-        self.window = pg.display.set_mode(size=(1280, 920))
+        self.window = pg.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
 
     def run(self):
-        print("The Game has Started")
-        
         while True:
             menu = Menu(self.window)
             menu.run()
-            pass
-            
-            #todo Check all Events
-
-            # for event in pg.event.get(): 
-                
-            #     #* Close Game
-            #     if event.type == pg.QUIT:
-            #         pg.quit()
-            #         quit()
 
 
 
