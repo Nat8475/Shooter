@@ -23,7 +23,7 @@ class Menu:
             
             #* Write text
 
-            self.menu_text(80, "Mountain Shooter",(COLOR_WHITE), ((WIN_WIDTH/2), 70))
+            self.menu_text(80, "Mountain Shooter",(COLOR_ORANGE), ((WIN_WIDTH/2), 70))
             #self.menu_text(60, "Shooter",(COLOR_ORANGE), ((WIN_WIDTH/2), 100))
             self.menu_text(35, "New Game 1P",(COLOR_WHITE), ((WIN_WIDTH/8), 200))
             self.menu_text(35, "New Game 2P - COOP",(COLOR_WHITE), ((WIN_WIDTH/6.25), 250))
