@@ -1,6 +1,6 @@
 import pygame as pg
 from Menu import Menu
-from Const import WIN_HEIGHT, WIN_WIDTH
+from Const import MENU_OPTION, WIN_HEIGHT, WIN_WIDTH
 
 class Game:
     def __init__(self):
@@ -10,7 +10,10 @@ class Game:
     def run(self):
         while True:
             menu = Menu(self.window)
-            menu.run()
+            menu_return = menu.run()
+
+            if menu_return == MENU_OPTION[4]:
+                quit()
 
 
 
