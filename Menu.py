@@ -1,13 +1,13 @@
 import pygame as pg
 from pygame import Rect, Surface
 from pygame.font import Font
-from Const import WIN_WIDTH, COLOR_ORANGE, COLOR_WHITE, MENU_OPTION
+from Const import WIN_WIDTH, COLOR_WHITE, MENU_OPTION, COLOR_BLACK
 
 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pg.image.load('oi.jpg')
+        self.surf = pg.image.load('./assets/MenuBg.png')
         self.rect = self.surf.get_rect(left=0,top=0)
 
     def run(self):
@@ -34,9 +34,9 @@ class Menu:
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(35, MENU_OPTION[i], COLOR_ORANGE,((WIN_WIDTH/8), 200 + 50 * i))
+                    self.menu_text(35, MENU_OPTION[i], COLOR_BLACK,((WIN_WIDTH/2), 200 + 25 * i))
                 else:
-                    self.menu_text(35, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH/8), 200 + 50 * i))
+                    self.menu_text(35, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH/2), 200 + 25 * i))
 
             pg.display.flip()
             
