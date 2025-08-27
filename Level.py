@@ -5,7 +5,6 @@ from pygame.font import Font
 from Const import COLOR_WHITE, WIN_HEIGHT, FPS
 from Entity import Entity
 from entityFactory import entityFactory
-from Background import Background
 
 class Level():
     def __init__(self, window, name, game_mode):
@@ -14,6 +13,7 @@ class Level():
         self.game_mode = game_mode 
         self.entity_list: list[Entity] = []
         self.entity_list.extend(entityFactory.get_entity('Level1Bg'))
+        self.entity_list.append(entityFactory.get_entity('Player1'))
         self.timeout = 20000
 
     def run(self):
