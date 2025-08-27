@@ -13,6 +13,9 @@ ENTITY_SPEED = {
     'Level1Bg4': 3,
 }
 
+#* F
+FPS = 100
+
 #*M
 
 MENU_OPTION = [ "New Game 1P", "New Game 2P - COOP", "New Game 2P - COMP", "Score", "Exit" ]
