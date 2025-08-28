@@ -4,7 +4,9 @@ import pygame as pg
 from pygame import Rect, Surface
 from pygame.font import Font
 from Const import COLOR_WHITE, ENEMY_SPAWN_TIME, EVENT_ENEMY, WIN_HEIGHT, FPS, MENU_OPTION
+from Enemy import Enemy
 from Entity import Entity
+from Player import Player
 from entityFactory import entityFactory
 from EntityMediator import EntityMediator
 
@@ -52,6 +54,12 @@ class Level():
                 self.window.blit(source= ent.surf, dest= ent.rect)
                 ent.move()
 
+                #o DRAW SHOT PLAYER AND ENEMY
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
+                
 
             #o ALL EVENTS
 
