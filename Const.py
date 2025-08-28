@@ -26,7 +26,29 @@ ENTITY_SPEED = {
 
 EVENT_ENEMY = pg.USEREVENT + 1
 
-ENEMY_SPAWN_TIME = 4000
+ENEMY_SPAWN_TIME = 3000
+
+ENTITY_HEALTH = {
+    'Level1Bg0': 999,
+    'Level1Bg1': 999,
+    'Level1Bg2': 999,
+    'Level1Bg3': 999,
+    'Level1Bg4': 999,
+    'Level2Bg0': 999,
+    'Level2Bg1': 999,
+    'Level2Bg2': 999,
+    'Level2Bg3': 999,
+    'Level2Bg4': 999,
+    'Level2Bg5': 999,
+    'Player1': 300,
+    'Player1Shot': 1,
+    'Player2': 300,
+    'Player2Shot': 1,
+    'Enemy1': 50,
+    'Enemy1Shot': 1,
+    'Enemy2': 50,
+    'Enemy2Shot': 1
+}
 
 #* F
 FPS = 100
@@ -42,6 +64,9 @@ PLAYER_KEY_DOWN = {'Player1': pg.K_DOWN, 'Player2': pg.K_s}
 PLAYER_KEY_LEFT = {'Player1': pg.K_LEFT, 'Player2': pg.K_a}
 PLAYER_KEY_RIGHT = {'Player1': pg.K_RIGHT, 'Player2': pg.K_d}
 PLAYER_KEY_SHOOT = {'Player1': pg.K_RCTRL, 'Player2': pg.K_LCTRL}
+
+
+
 
 #* W
 WIN_WIDTH = 576
