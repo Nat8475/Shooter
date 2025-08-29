@@ -1,7 +1,7 @@
 import pygame as pg
 from pygame import Rect, Surface
 from pygame.font import Font
-from Const import WIN_WIDTH, COLOR_WHITE, MENU_OPTION, COLOR_BLACK
+from Const import WIN_WIDTH, C_WHITE, MENU_OPTION, C_BLACK
 
 
 class Menu:
@@ -24,7 +24,7 @@ class Menu:
             
             #* DRAW IMAGENS
 
-            self.menu_text(80, "Mountain Shooter",(COLOR_BLACK), ((WIN_WIDTH/2), 70))
+            self.menu_text(80, "Mountain Shooter",(C_BLACK), ((WIN_WIDTH/2), 70))
             #self.menu_text(60, "Shooter",(COLOR_ORANGE), ((WIN_WIDTH/2), 100))
             # self.menu_text(35, "New Game 1P",(COLOR_WHITE), ((WIN_WIDTH/8), 200))
             # self.menu_text(35, "New Game 2P - COOP",(COLOR_WHITE), ((WIN_WIDTH/6.25), 250))
@@ -34,9 +34,9 @@ class Menu:
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(35, MENU_OPTION[i], COLOR_BLACK,((WIN_WIDTH/2), 200 + 25 * i))
+                    self.menu_text(35, MENU_OPTION[i], C_BLACK,((WIN_WIDTH/2), 200 + 25 * i))
                 else:
-                    self.menu_text(35, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH/2), 200 + 25 * i))
+                    self.menu_text(35, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH/2), 200 + 25 * i))
 
             pg.display.flip()
             

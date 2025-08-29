@@ -2,8 +2,10 @@ from Const import WIN_WIDTH
 from Enemy import Enemy
 from EnemyShot import EnemyShot
 from Entity import Entity
+from Player import Player
 from PlayerShot import PlayerShot
 
+import pygame as pg
 
 class EntityMediator():
 
@@ -23,21 +25,68 @@ class EntityMediator():
             if ent.rect.left <= 0:
                 ent.health = 0
 
-    #o VERIFY ENTITY HEALTH 
+
+    #o VERIFY SHOOT AND ENEMY COLLISION
+
+    @staticmethod
+    def __verify_collision_entity(ent1, ent2):
+        valid_interaction = False
+
+        if isinstance(ent1, Enemy) and isinstance(ent2, PlayerShot):
+            valid_interaction = True
+        if isinstance(ent1, PlayerShot) and isinstance(ent2, Enemy):
+            valid_interaction = True
+        
+        if isinstance(ent1, Player) and isinstance(ent2, EnemyShot):
+            valid_interaction = True
+        if isinstance(ent1, EnemyShot) and isinstance(ent2, Player):
+            valid_interaction= True
+
+        if valid_interaction: #r if valid_interaction == True
+            if (ent1.rect.right >= ent2.rect.left) and (ent1.rect.left <= ent2.rect.right) and (ent1.rect.bottom >= ent2.rect.top) and (ent1.rect.top <= ent2.rect.bottom):
+                ent1.health -= ent2.damage
+                ent2.health -= ent1.damage
+
+                ent1.last_dmg = ent2.name
+                ent2.last_dmg = ent1.name
+        
+
+    #o VERIFY ENTITY HEALTH AND DELET ENTENTY
 
     @staticmethod
     def verify_health(entity_list: list[Entity]):
         for ent in entity_list:
             if ent.health <= 0:
+                if isinstance(ent, Enemy):
+                    EntityMediator.__give_score(ent, entity_list)
+
                 entity_list.remove(ent)
 
+    #o GIVE SCORE PLAYER
+
+    @staticmethod
+    def __give_score(enemy: Enemy, entity_list: list[Entity]):
+        
+        if enemy.last_dmg == 'Player1Shot':
+            for ent in entity_list:
+                if ent.name == 'Player1':
+                    ent.score += enemy.score
+
+        if enemy.last_dmg == 'Player2Shot':
+            for ent in entity_list:
+                if ent.name == 'Player2':
+                    ent.score += enemy.score
 
     #o VERIFY COLLISION
 
     @staticmethod
     def verify_collision(entity_list: list[Entity]):
         for i in range(len(entity_list)):
-            entity_test = entity_list[i]
+            entity1 = entity_list[i]
 
-            EntityMediator.__verify_collision_window(entity_test)
+            EntityMediator.__verify_collision_window(entity1)
+
+            for j in range(i + 1, len(entity_list)):
+                entity2 = entity_list[j]
+                EntityMediator.__verify_collision_entity(entity1, entity2)
     

@@ -3,7 +3,7 @@ import sys
 import pygame as pg
 from pygame import Rect, Surface
 from pygame.font import Font
-from Const import COLOR_WHITE, ENEMY_SPAWN_TIME, EVENT_ENEMY, WIN_HEIGHT, FPS, MENU_OPTION
+from Const import C_PURPLE, C_GREEN, C_WHITE, ENEMY_SPAWN_TIME, EVENT_ENEMY, WIN_HEIGHT, FPS, MENU_OPTION
 from Enemy import Enemy
 from Entity import Entity
 from Player import Player
@@ -59,6 +59,12 @@ class Level():
                     shoot = ent.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+
+
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Player1 - Health: {ent.health} | Score: {ent.score}', C_GREEN, (10,20))
+                if ent.name == 'Player2':
+                    self.level_text(14, f'Player2 - Health: {ent.health} | Score: {ent.score}', C_PURPLE, (10,30))
                 
 
             #o ALL EVENTS
@@ -71,12 +77,17 @@ class Level():
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(entityFactory.get_entity(choice))
 
+    
+
 
             #o DRAW TEXT IN LEVEL
+
             
-            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', COLOR_WHITE, (10,5))
-            self.level_text(14, f'FPS: {clock.get_fps() :.0f}', COLOR_WHITE, (10, WIN_HEIGHT - 35))
-            self.level_text(14, f'Entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
+            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s', C_WHITE, (10,5))
+            #self.level_text(14, f'{self.name} - Health: {self.heakl}s', C_WHITE, (10,5))
+            
+            self.level_text(14, f'FPS: {clock.get_fps() :.0f}', C_WHITE, (10, WIN_HEIGHT - 35))
+            self.level_text(14, f'Entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 20))
         
             pg.display.flip()
 

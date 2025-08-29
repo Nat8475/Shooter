@@ -1,10 +1,14 @@
 import pygame as pg
 
 #* C
-COLOR_BLACK = 0, 0, 0
-COLOR_WHITE = 255, 255, 255
+
+C_BLACK = (0, 0, 0)
+C_WHITE = (255, 255, 255)
+C_PURPLE = (148, 0, 211)
+C_GREEN = (173, 255, 47)
 
 #* E
+
 ENTITY_SPEED = {
     'Level1Bg0': 0,
     'Level1Bg1': 1,
@@ -59,6 +63,51 @@ ENTITY_SHOT_DELAY = {
     'Enemy1': 100,
     'Enemy2': 100
 }
+
+ENTITY_DAMAGE = {
+    'Level1Bg0': 0,
+    'Level1Bg1': 0,
+    'Level1Bg2': 0,
+    'Level1Bg3': 0,
+    'Level1Bg4': 0,
+    'Level2Bg0': 0,
+    'Level2Bg1': 0,
+    'Level2Bg2': 0,
+    'Level2Bg3': 0,
+    'Level2Bg4': 0,
+    'Level2Bg5': 0,
+    'Player1': 1,
+    'Player1Shot': 25,
+    'Player2': 1,
+    'Player2Shot': 25,
+    'Enemy1': 1,
+    'Enemy1Shot': 25,
+    'Enemy2': 1,
+    'Enemy2Shot': 25
+}
+
+ENTITY_SCORE = {
+    'Level1Bg0': 0,
+    'Level1Bg1': 0,
+    'Level1Bg2': 0,
+    'Level1Bg3': 0,
+    'Level1Bg4': 0,
+    'Level2Bg0': 0,
+    'Level2Bg1': 0,
+    'Level2Bg2': 0,
+    'Level2Bg3': 0,
+    'Level2Bg4': 0,
+    'Level2Bg5': 0,
+    'Player1': 0,
+    'Player1Shot': 0,
+    'Player2': 0,
+    'Player2Shot': 0,
+    'Enemy1': 100,
+    'Enemy1Shot': 0,
+    'Enemy2': 125,
+    'Enemy2Shot': 0
+}
+
 
 #* F
 FPS = 100
