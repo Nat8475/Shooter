@@ -9,6 +9,12 @@ C_GREEN = (173, 255, 47)
 
 #* E
 
+EVENT_ENEMY = pg.USEREVENT + 1
+
+EVENT_TIMEOUT = pg.USEREVENT + 2
+
+ENEMY_SPAWN_TIME = 3000
+
 ENTITY_SPEED = {
     'Level1Bg0': 0,
     'Level1Bg1': 1,
@@ -31,9 +37,6 @@ ENTITY_SPEED = {
     'Enemy2Shot': 3,
 }
 
-EVENT_ENEMY = pg.USEREVENT + 1
-
-ENEMY_SPAWN_TIME = 3000
 
 ENTITY_HEALTH = {
     'Level1Bg0': 999,
@@ -108,7 +111,6 @@ ENTITY_SCORE = {
     'Enemy2Shot': 0
 }
 
-
 #* F
 FPS = 100
 
@@ -122,7 +124,12 @@ PLAYER_KEY_UP = {'Player1': pg.K_UP, 'Player2': pg.K_w}
 PLAYER_KEY_DOWN = {'Player1': pg.K_DOWN, 'Player2': pg.K_s}
 PLAYER_KEY_LEFT = {'Player1': pg.K_LEFT, 'Player2': pg.K_a}
 PLAYER_KEY_RIGHT = {'Player1': pg.K_RIGHT, 'Player2': pg.K_d}
-PLAYER_KEY_SHOOT = {'Player1': pg.K_RALT, 'Player2': pg.K_LCTRL}
+PLAYER_KEY_SHOOT = {'Player1': pg.K_SPACE, 'Player2': pg.K_LALT}
+
+#* T
+
+TIMEOUT_STEP = 100 #10ms
+TIMEOUT_GAME = 30000 #20s
 
 #* W
 WIN_WIDTH = 576
