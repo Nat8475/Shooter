@@ -15,8 +15,8 @@ class Menu:
         menu_option = -1;
         #* Load Music Menu
  
-        # pg.mixer_music.load('./assets/Menu.mp3')
-        # pg.mixer_music.play(-1)
+        pg.mixer_music.load('./assets/Menu.wav')
+        pg.mixer_music.play(-1)
 
         while True:
             #* Load Background

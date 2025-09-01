@@ -48,8 +48,8 @@ class Level():
 
         #o LOAD MUSIC LEVEL
 
-        # pg.mixer_music.load(f'./assets/{self.name}.mp3')
-        # pg.mixer_music.play(-1)
+        pg.mixer_music.load(f'./assets/Level.wav')
+        pg.mixer_music.play(-1)
 
         clock = pg.time.Clock()
 
