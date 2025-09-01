@@ -25,12 +25,6 @@ class Menu:
             #* DRAW IMAGENS
 
             self.menu_text(80, "Mountain Shooter",(C_BLACK), ((WIN_WIDTH/2), 70))
-            #self.menu_text(60, "Shooter",(COLOR_ORANGE), ((WIN_WIDTH/2), 100))
-            # self.menu_text(35, "New Game 1P",(COLOR_WHITE), ((WIN_WIDTH/8), 200))
-            # self.menu_text(35, "New Game 2P - COOP",(COLOR_WHITE), ((WIN_WIDTH/6.25), 250))
-            # self.menu_text(35, "New Game 2P - COMP",(COLOR_WHITE), ((WIN_WIDTH/6.25), 300))
-            # self.menu_text(35, "Score",(COLOR_WHITE), ((WIN_WIDTH/11.5), 350))
-            # self.menu_text(35, "Exit",(COLOR_WHITE), ((WIN_WIDTH/12.5), 400))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
